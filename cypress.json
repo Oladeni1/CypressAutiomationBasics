@@ -1,0 +1,7 @@
+{
+  "defaultCommandTimeout": 8000,
+  "pageLoadTimeout": 30000,
+  "reporter": "mochawesome",
+  "projectId": "kmom6q"
+  
+}
