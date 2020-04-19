@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-01-08T12:40:02.097Z",
-    "end": "2020-01-08T12:40:14.653Z",
-    "duration": 12556,
+    "start": "2020-04-19T17:19:05.821Z",
+    "end": "2020-04-19T17:19:20.905Z",
+    "duration": 15084,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,16 +18,16 @@
   },
   "results": [
     {
-      "uuid": "57378d24-2344-41bb-b69f-6b0768175c76",
+      "uuid": "c4695227-c823-40db-ae6e-6eeef537284f",
       "title": "",
-      "fullFile": "",
-      "file": "",
+      "fullFile": "cypress\\integration\\examples\\WebTable.js",
+      "file": "cypress\\integration\\examples\\WebTable.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "1f02108b-0911-4212-ab28-00f6382fc835",
+          "uuid": "dd2f2e7b-1c6e-4cca-ab38-cf6aac95fe7a",
           "title": "My First Test",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Do something nice!",
               "fullTitle": "My First Test Do something nice!",
               "timedOut": null,
-              "duration": 8373,
+              "duration": 10632,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit(\"https://rahulshettyacademy.com/AutomationPractice/\"); //Managing web table:\ncy.get('tr td:nth-child(2)').each(function ($el, indext, $list) {\n  var text = $el.text();\n  if (text.includes('Python')) {\n    cy.get('tr td:nth-child(2)').eq(indext).next().then(function (price) {\n      var priceText = price.text();\n      expect(priceText).to.equal('25');\n    });\n  }\n}); //fixture",
               "err": {},
-              "uuid": "33032a03-ff5b-4e8a-b7a4-68822ec3dff7",
-              "parentUUID": "1f02108b-0911-4212-ab28-00f6382fc835",
+              "uuid": "f6043f5a-2051-46df-90bd-f5755aace58e",
+              "parentUUID": "dd2f2e7b-1c6e-4cca-ab38-cf6aac95fe7a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "33032a03-ff5b-4e8a-b7a4-68822ec3dff7"
+            "f6043f5a-2051-46df-90bd-f5755aace58e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8373,
+          "duration": 10632,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
