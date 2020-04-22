@@ -4,10 +4,20 @@
   "description": "test automation package",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules\\.bin\\cypress run",
+    "openCypressTestRunner": "node_modules\\.bin\\cypress open",
+    "testSpec": "node_modules\\.bin\\cypress run",
     "headedTest": "npm run test -- --headed",
     "chromeTest": "npm run test -- --browser chrome",
-    "recordDashboardTest": "npm run test -- --record --key ceff6ed6-379d-4bd4-a9a5-baa86f2eb708 --reporter mochawesome"
+    "recordDashboardTest": "npm run test -- --record --key ceff6ed6-379d-4bd4-a9a5-baa86f2eb708 --reporter mochawesome",
+
+    "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports",
+    "preTest": "npm run clean:reports",
+    "script": "cypress run",
+    "combinedJsonReport": "mochawesome-merge --reportDir cypress/reports/mocha > cypress/reports/mochareports/report.json",
+    "generateReport": "merge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "postTestReport": "npm run combinedJsonReport && npm run generateReport",
+    "test": "npm run script || npm run postTestReport"
+
   },
   "author": "Ola Oladeni",
   "license": "ISC",
@@ -15,7 +25,10 @@
     "cypress": "^4.3.0"
   },
   "dependencies": {
+    "cypress-multi-reporters": "^1.2.4",
     "mocha": "^5.2.0",
-    "mochawesome": "^4.1.0"
+    "mochawesome": "^4.1.0",
+    "mochawesome-merge": "^4.0.3",
+    "mochawesome-report-generator": "^5.1.0"
   }
 }
