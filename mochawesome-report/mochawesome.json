@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-04-19T17:19:05.821Z",
-    "end": "2020-04-19T17:19:20.905Z",
-    "duration": 15084,
+    "start": "2020-04-22T01:09:38.248Z",
+    "end": "2020-04-22T01:09:50.805Z",
+    "duration": 12557,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c4695227-c823-40db-ae6e-6eeef537284f",
+      "uuid": "a7b663e5-2a9b-43cb-83c8-76b7023a73c2",
       "title": "",
       "fullFile": "cypress\\integration\\examples\\WebTable.js",
       "file": "cypress\\integration\\examples\\WebTable.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "dd2f2e7b-1c6e-4cca-ab38-cf6aac95fe7a",
+          "uuid": "6d6fbe1e-8224-47dc-930f-4921d8758870",
           "title": "My First Test",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Do something nice!",
               "fullTitle": "My First Test Do something nice!",
               "timedOut": null,
-              "duration": 10632,
+              "duration": 8779,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit(\"https://rahulshettyacademy.com/AutomationPractice/\"); //Managing web table:\ncy.get('tr td:nth-child(2)').each(function ($el, indext, $list) {\n  var text = $el.text();\n  if (text.includes('Python')) {\n    cy.get('tr td:nth-child(2)').eq(indext).next().then(function (price) {\n      var priceText = price.text();\n      expect(priceText).to.equal('25');\n    });\n  }\n}); //fixture",
               "err": {},
-              "uuid": "f6043f5a-2051-46df-90bd-f5755aace58e",
-              "parentUUID": "dd2f2e7b-1c6e-4cca-ab38-cf6aac95fe7a",
+              "uuid": "f276ac50-5b0f-49f0-9294-66d31cd865d2",
+              "parentUUID": "6d6fbe1e-8224-47dc-930f-4921d8758870",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f6043f5a-2051-46df-90bd-f5755aace58e"
+            "f276ac50-5b0f-49f0-9294-66d31cd865d2"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 10632,
+          "duration": 8779,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -92,7 +92,16 @@
       "version": "4.1.0"
     },
     "marge": {
-      "options": {},
+      "options": {
+        "reporterEnabled": "mochawesome",
+        "mochawesomeReporterOptions": {
+          "reportDir": "cypress/reports/mocha",
+          "quite": true,
+          "overwrite": false,
+          "html": false,
+          "json": true
+        }
+      },
       "version": "4.1.0"
     }
   }
