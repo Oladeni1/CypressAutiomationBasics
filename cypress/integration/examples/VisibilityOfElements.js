@@ -2,7 +2,7 @@
 
 describe('My First Test', function() {
 
-    it('Do something nice!', function() {
+    it('Do Visibility of elements', function() {
 
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
       

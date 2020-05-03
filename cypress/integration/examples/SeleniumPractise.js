@@ -2,7 +2,7 @@
 
 describe('My First Test', function() {
 
-    it('Do something nice!', function() {
+    it('Do selenium practice', function() {
 
         cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/")
         cy.get('.search-keyword').type("ca")

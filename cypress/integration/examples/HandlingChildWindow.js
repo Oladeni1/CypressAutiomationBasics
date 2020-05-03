@@ -2,7 +2,7 @@
 
 describe('My First Test', function() {
 
-    it('Do something nice!', function() {
+    it('Do Handling of Child Wimdow', function() {
 
         cy.visit("http://qaclickacademy.com/practice.php/")
 

@@ -9,15 +9,13 @@
     "headedTest": "npm run test -- --headed",
     "chromeTest": "npm run test -- --browser chrome",
     "recordDashboardTest": "npm run test -- --record --key ceff6ed6-379d-4bd4-a9a5-baa86f2eb708 --reporter mochawesome",
-
     "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports",
     "preTest": "npm run clean:reports",
     "script": "cypress run",
     "combinedJsonReport": "mochawesome-merge --reportDir cypress/reports/mocha > cypress/reports/mochareports/report.json",
     "generateReport": "merge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
     "postTestReport": "npm run combinedJsonReport && npm run generateReport",
-    "test": "npm run script || npm run postTestReport"
-
+    "runTestWithReport": "npm run script || npm run postTestReport"
   },
   "author": "Ola Oladeni",
   "license": "ISC",

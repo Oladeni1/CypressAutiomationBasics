@@ -2,7 +2,7 @@
 
 describe('My First Test', function() {
 
-    it('Do something nice!', function() {
+    it('Do Radio button test', function() {
 
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
       
