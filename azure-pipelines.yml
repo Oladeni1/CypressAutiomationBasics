@@ -20,3 +20,8 @@ steps:
     npm run build
     npm run script || npm run postTestReport
   displayName: 'npm install and build'
+- task: PublishBuildArtifacts@1
+  inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'CypressTestReport'
+      publishLocation: 'Container'
