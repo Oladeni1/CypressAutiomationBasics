@@ -18,7 +18,6 @@ steps:
 - script: |
     npm install
     npm run build
-    npm run script || npm run cypress
   displayName: 'npm install and build'
 - task: PublishBuildArtifacts@1
   inputs:
