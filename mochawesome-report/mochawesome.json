@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 1,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2020-04-22T01:09:38.248Z",
-    "end": "2020-04-22T01:09:50.805Z",
-    "duration": 12557,
+    "failures": 1,
+    "start": "2020-06-04T18:39:23.180Z",
+    "end": "2020-06-04T18:40:39.472Z",
+    "duration": 76292,
     "testsRegistered": 1,
-    "passPercent": 100,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,16 +18,16 @@
   },
   "results": [
     {
-      "uuid": "a7b663e5-2a9b-43cb-83c8-76b7023a73c2",
+      "uuid": "abafac54-1871-449a-9c15-4f6221c55358",
       "title": "",
-      "fullFile": "cypress\\integration\\examples\\WebTable.js",
-      "file": "cypress\\integration\\examples\\WebTable.js",
+      "fullFile": "cypress\\integration\\SmokeTests\\Alerts.js",
+      "file": "cypress\\integration\\SmokeTests\\Alerts.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "6d6fbe1e-8224-47dc-930f-4921d8758870",
+          "uuid": "41b22f7f-d592-4064-afa2-3f1fbcea97d9",
           "title": "My First Test",
           "fullFile": "",
           "file": "",
@@ -35,32 +35,36 @@
           "afterHooks": [],
           "tests": [
             {
-              "title": "Do something nice!",
-              "fullTitle": "My First Test Do something nice!",
+              "title": "Do alert!",
+              "fullTitle": "My First Test Do alert!",
               "timedOut": null,
-              "duration": 8779,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 56548,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
-              "code": "cy.visit(\"https://rahulshettyacademy.com/AutomationPractice/\"); //Managing web table:\ncy.get('tr td:nth-child(2)').each(function ($el, indext, $list) {\n  var text = $el.text();\n  if (text.includes('Python')) {\n    cy.get('tr td:nth-child(2)').eq(indext).next().then(function (price) {\n      var priceText = price.text();\n      expect(priceText).to.equal('25');\n    });\n  }\n}); //fixture",
-              "err": {},
-              "uuid": "f276ac50-5b0f-49f0-9294-66d31cd865d2",
-              "parentUUID": "6d6fbe1e-8224-47dc-930f-4921d8758870",
+              "code": "cy.visit(\"https://rahulshettyacademy.com/AutomationPractice/\"); //Global element alias declaration:\ncy.get('#alertbtn').as('AlertButton');\ncy.get('#confirmbtn').as('ConfirmButton'); //Handling alert popup:- Note: Cypress automatically handle alert popups\ncy.get('@AlertButton').click(); //click alert button\n//Alert text assertion:\ncy.on('window:alert', function (str) {\n  expect(str).to.equal('Hello , share this practice page and share your knowledge');\n});\ncy.get('@ConfirmButton').click(); //click confirm button\n//Alert text assertion:\ncy.on('window:confirm', function (strg) {\n  expect(strg).to.equal('Hello , Are you sure you want to confirm?');\n}); //fixture",
+              "err": {
+                "message": "CypressError: Timed out after waiting `50000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `50000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.",
+                "estack": "CypressError: Timed out after waiting `50000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `50000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n    at timedOutWaitingForPageLoad (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:144463:13)\n    at https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:145424:16\n    at tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:10384:23)\n    at https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:5506:41\n    at tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:10384:23)\n    at Promise._settlePromiseFromHandler (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:8319:31)\n    at Promise._settlePromise (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:8376:18)\n    at Promise._settlePromise0 (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:8421:10)\n    at Promise._settlePromises (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:8497:18)\n    at _drainQueueStep (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:5091:12)\n    at _drainQueue (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:5084:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:5100:5)\n    at Async.drainQueues (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:4970:14)\nFrom Your Spec Code:\n    at Context.eval (https://rahulshettyacademy.com/__cypress/tests?p=cypress\\integration\\SmokeTests\\Alerts.js:7:8)",
+                "diff": null
+              },
+              "uuid": "69770a53-556d-42bc-86aa-14f0beda50e9",
+              "parentUUID": "41b22f7f-d592-4064-afa2-3f1fbcea97d9",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "f276ac50-5b0f-49f0-9294-66d31cd865d2"
+          "passes": [],
+          "failures": [
+            "69770a53-556d-42bc-86aa-14f0beda50e9"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8779,
+          "duration": 56548,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -78,7 +82,7 @@
   ],
   "meta": {
     "mocha": {
-      "version": "5.2.0"
+      "version": "7.0.1"
     },
     "mochawesome": {
       "options": {
@@ -98,7 +102,7 @@
           "reportDir": "cypress/reports/mocha",
           "quite": true,
           "overwrite": false,
-          "html": false,
+          "html": true,
           "json": true
         }
       },

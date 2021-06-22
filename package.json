@@ -4,15 +4,15 @@
   "description": "test automation package",
   "main": "index.js",
   "scripts": {
-    "openCypressTestRunner": "node_modules\\.bin\\cypress open",
-    "testSpec": "node_modules\\.bin\\cypress run",
+    "openCypressTestRunner": "cypress open",
+    "test": "cypress run",
     "headedTest": "npm run test -- --headed",
     "chromeTest": "npm run test -- --browser chrome",
     "recordDashboardTest": "npm run test -- --record --key ceff6ed6-379d-4bd4-a9a5-baa86f2eb708 --reporter mochawesome",
-    "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports",
+    "clean:reports": "rmdir /s /Q cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
     "preTest": "npm run clean:reports",
     "script": "cypress run",
-    "combinedJsonReport": "mochawesome-merge --reportDir cypress/reports/mocha > cypress/reports/mochareports/report.json",
+    "combinedJsonReport": "mochawesome-merge ./cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
     "generateReport": "merge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
     "postTestReport": "npm run combinedJsonReport && npm run generateReport",
     "runTestWithReport": "npm run script || npm run postTestReport"
@@ -20,13 +20,26 @@
   "author": "Ola Oladeni",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^4.3.0"
+    "cypress": "^4.12.1",
+    "cypress-xpath": "^1.6.0",
+    "prettier": "2.0.5"
   },
   "dependencies": {
+    "-": "0.0.1",
+    "D": "^1.0.0",
+    "cypress-iframe": "^1.0.1",
     "cypress-multi-reporters": "^1.2.4",
-    "mocha": "^5.2.0",
+    "mocha": "^8.3.2",
     "mochawesome": "^4.1.0",
     "mochawesome-merge": "^4.0.3",
     "mochawesome-report-generator": "^5.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oladeni1/CypressAutiomationBasics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Oladeni1/CypressAutiomationBasics/issues"
+  },
+  "homepage": "https://github.com/Oladeni1/CypressAutiomationBasics#readme"
 }
