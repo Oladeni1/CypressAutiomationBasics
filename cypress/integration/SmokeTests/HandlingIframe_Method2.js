@@ -3,7 +3,7 @@
 import 'cypress-iframe'
 
 
-describe('iFrame ', function () {
+describe.skip('iFrame ', function () {
 
   it('Do Handling iFrame in cypress', function () {
 

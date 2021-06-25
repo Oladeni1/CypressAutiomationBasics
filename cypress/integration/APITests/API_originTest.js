@@ -2,7 +2,7 @@
 
 var origin = require('../../fixtures/origin.json')
 
-describe('API_Fixture Suite', function() 
+describe.skip('API_Fixture Suite', function() 
 {  
     it('fixture', function() {
     cy.fixture('origin').then(function(origin){

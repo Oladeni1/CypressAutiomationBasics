@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('API_XHR Suite', function() 
+describe.skip('API_XHR Suite', function() 
 {
     
 
