@@ -20,7 +20,7 @@
   "author": "Ola Oladeni",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^4.12.1",
+    "cypress": "^10.1.0",
     "cypress-xpath": "^1.6.0",
     "prettier": "2.0.5"
   },
@@ -29,10 +29,10 @@
     "D": "^1.0.0",
     "cypress-iframe": "^1.0.1",
     "cypress-multi-reporters": "^1.2.4",
-    "mocha": "^8.3.2",
-    "mochawesome": "^4.1.0",
+    "mocha": "^10.0.0",
+    "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.0.3",
-    "mochawesome-report-generator": "^5.1.0"
+    "mochawesome-report-generator": "^6.2.0"
   },
   "repository": {
     "type": "git",
