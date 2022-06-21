@@ -20,7 +20,7 @@
   "author": "Ola Oladeni",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^4.12.1",
+    "cypress": "^10.2.0",
     "cypress-xpath": "^1.6.0",
     "prettier": "2.0.5"
   },
