@@ -1,0 +1,87 @@
+****gcp commands****
+gcloud init
+gcloud auth login
+gcloud auth list
+gcloud compute instances list
+gcloud compute zones list
+gcloud config set proxy/type http
+
+gcloud projects list
+gcloud config list
+gcloud config list project
+gcloud compute instance-groups list-instances
+gcloud compute instances create [instance-name]
+gcloud compute instance-groups managed instance-configs list 
+
+gcloud compute instances add-labelsrace.append --create-disk=auto-delete=yes,boot=yes,device-name=instance-2,image=projects/debian-cloud/global/images/debian-  
+gcloud compute instances add-metadata
+gcloud compute instances add-resource-policies
+gcloud compute instances add-tags
+ 
+gcloud compute instances add-access-configviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/loggin  
+gcloud compute instances add-iam-policy-bindingg.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.reado 
+
+
+****To enable API for a selected project****
+gcloud services enable \ run.googleapis.com \ --project=[PROJECT_ID]
+ 
+*****To enable powershell (administrator) with GoogleCloud*****
+Install-module GoogleCloud
+open a new terminal and run
+gcloud init (Choose 1, 1, 2, n) on prompts for re-intialise, login account, project and region
+Then on the powershell (admininistrator) run
+Get-GceInstance
+
+
+*****Access commands from the Command Palette:*****
+for Windows - (Ctrl + Shift + P)
+for Mac - (Command + Shift + P)
+
+****config set project****
+e. g  
+my-java-project-97293
+gcloud config set project my-java-project-97293
+
+my-development-project-377100
+gcloud config set project my-development-project-377100
+
+****services enabling for google APIs*****
+gcloud services enable \
+    run.googleapis.com \
+    --project=my-development-project-377100
+
+==================================================================
+
+*****How to create gcp build pipelibe with GKE*****
+Create or select and existing project
+gcloud init
+gcloud auth login
+gcloud config set project [PROJECT_ID]
+gcloud auth list
+
+Enable all required APIs for project/account: 
+Run all cmd (1 by 1)
+gcloud services enable container.googleapis.com 
+gcloud services enable containerregistry.googleapis.com
+gcloud services enable cloudbuild.googleapis.com 
+gcloud services enable sourcerepo.googleapis.com
+
+****Then,
+Clone a repo (for eaxample)
+git clone https://github.com/Oladeni1/CypressAutiomationBasics.git
+
+Change directory to the repo folder (For example)
+cd CypressAutiomationBasics
+
+****Then, 
+Create a cluster for the project an zone: (This will create 3 nodes)
+Run all cmd (1 by 1)
+gcloud container clusters create cluster-name \ 
+--project=my-development-project-377100 \ 
+--zone=us-central1-c \ 
+--scopes "https://www.googleapis.com/auth/projecthosting,storage-rw"
+
+Wait for this to be completed and sucessful - The cluster will be created in the region with 3 nodes
+
+
+
